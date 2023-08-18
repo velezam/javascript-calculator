@@ -1,0 +1,142 @@
+@import url(https://allfont.net/allfont.css?fonts=digital-7);
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+//button colors
+$clear-button: rgb(172, 57, 57);
+$numpad-button: #4d4d4d;
+$operator-button: #666666;
+$equals-button: #004466;
+
+//background colors
+$app-bg: #c2c2d6;
+$calculator-outline: #47476b;
+$border-black: black;
+
+//text colors
+$button-text: white;
+$lower-display-text: white;
+$upper-display-text: #ffa600;
+
+//reset css and set font
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 20px;
+}
+
+#root {
+  display: flex;
+  background-color: $app-bg;
+  height: 100vh;
+
+  .calculator-container {
+    margin: auto;
+    min-width: 380px;
+    padding: 5px;
+    background-color: black;
+    outline: 2px solid $calculator-outline;
+
+    .display {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      font-family: "Digital-7", monospace;
+    }
+
+    .upper {
+      background-color: black;
+      color: $upper-display-text;
+      height: 3vh;
+      font-size: 1.5em;
+    }
+
+    .lower {
+      background-color: black;
+      color: $lower-display-text;
+      height: 4vh;
+      font-size: 2em;
+    }
+
+    .controls-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 1px;
+      height: 40vh;
+      background-color: black;
+      padding-top: 5px;
+
+      //reset all button css and set colors
+      * {
+        all: unset;
+        background-color: $numpad-button;
+        color: $button-text;
+      }
+
+      //highlight buttons on hover
+      *:hover {
+        color: black;
+        border: 2px solid white;
+      }
+
+      //buttons listed in order from
+      //left -> right, top -> bottom
+      #clear {
+        grid-area: 1 / 1 / 2 / 3;
+        background-color: $clear-button;
+      }
+      #divide {
+        grid-area: 1 / 3 / 2 / 4;
+      }
+      #multiply {
+        grid-area: 1 / 4 / 2 / 5;
+      }
+      #seven {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+      #eight {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+      #nine {
+        grid-area: 2 / 3 / 3 / 4;
+      }
+      #subtract {
+        grid-area: 2 / 4 / 3 / 5;
+      }
+      #four {
+        grid-area: 3 / 1 / 4 / 2;
+      }
+      #five {
+        grid-area: 3 / 2 / 4 / 3;
+      }
+      #six {
+        grid-area: 3 / 3 / 4 / 4;
+      }
+      #add {
+        grid-area: 3 / 4 / 4 / 5;
+      }
+      #one {
+        grid-area: 4 / 1 / 5 / 2;
+      }
+      #two {
+        grid-area: 4 / 2 / 5 / 3;
+      }
+      #three {
+        grid-area: 4 / 3 / 5 / 4;
+      }
+      #equals {
+        grid-area: 4 / 4 / 6 / 5;
+        background-color: #004466;
+      }
+      #zero {
+        grid-area: 5 / 1 / 6 / 3;
+      }
+      #decimal {
+        grid-area: 5 / 3 / 6 / 4;
+      }
+    }
+  }
+}
