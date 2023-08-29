@@ -1,15 +1,18 @@
 import { useState } from 'react'
 import './App.scss'
-import MainDisplay from './components/MainDisplay'
-import ControlsContainer from './components/ControlsContainer'
+import Display from './components/Display'
+import Controls from './components/Controls'
+
 
 function App() {
+  const [operand, setOperand] = useState<string>("0")
+  const [equation, setEquation] = useState<string>("")
 
   return (
     <>
       <div className="calculator-container">
-        <MainDisplay />
-        <ControlsContainer />
+        <Display operand={operand} equation={equation}/>
+        <Controls setOperand={setOperand} operand={operand} equation={equation} setEquation={setEquation}/>
       </div>
     </>
   )

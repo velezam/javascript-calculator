@@ -34,7 +34,7 @@ $upper-display-text: #ffa600;
 
   .calculator-container {
     margin: auto;
-    min-width: 380px;
+    width: 380px;
     padding: 5px;
     background-color: black;
     outline: 2px solid $calculator-outline;
@@ -50,14 +50,14 @@ $upper-display-text: #ffa600;
       background-color: black;
       color: $upper-display-text;
       height: 3vh;
-      font-size: 1.5em;
+      font-size: 1em;
     }
 
     .lower {
       background-color: black;
       color: $lower-display-text;
       height: 4vh;
-      font-size: 2em;
+      font-size: 1.5em;
     }
 
     .controls-container {
